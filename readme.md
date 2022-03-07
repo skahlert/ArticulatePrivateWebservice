@@ -11,3 +11,21 @@ These functions are supposed to be used with Google Script:
 4. Grab the bearer token from a logged in session in rise (more detail will follow)
 5. Paste your bearer token at the beginning of the new script.
 
+# Supported Functions
+- Duplicate a course
+- Move course to a folder
+- Add collaborator
+- Download XLIFF for translation
+- Translate XLIFF via Google Translate
+- Upload translated XLIFF to course
+
+# Possible, but not yet implemented
+- List of all courses
+- List all folders
+- Transfer course ownership
+- Change access rights for collaborators
+- Download course content
+- Edit course content
+- Delete course
+- Rename course
+- Export (PDF/Scorm/HTML)
