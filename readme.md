@@ -7,9 +7,9 @@ This is a collection of private webservice calls for [Articulate Rise](https://a
 These functions are supposed to be used with Google Script:
 1. Go to the [google script panel](https://script.google.com/)
 2. Create a new project
-3. Paste the contents of riseApi.js into the newly created script file.
-4. Grab the bearer token from a logged in session in rise (more detail will follow)
-5. Paste your bearer token at the beginning of the new script.
+3. Paste the contents of riseApi.gs into the newly created script file.
+4. Call the service with your Articulate credentials (see example below).
+
 
 # Supported Functions
 - Authenticaton (experimental)
