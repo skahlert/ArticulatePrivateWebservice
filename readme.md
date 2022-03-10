@@ -38,6 +38,7 @@ function test(){
   const myPassword = "..."
   const service = RiseService(myEmail,myPassword)
   const courses = service.getCourses()
-  console.log(courses)
+  const courseDetails = service.getCourseInformation(courses.courses[0].id)
+  console.log(courseDetails)
 }
 ```

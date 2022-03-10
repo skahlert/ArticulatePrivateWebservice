@@ -1,5 +1,3 @@
-
-
 function RiseService(username,password){
   let authorizeQuery = {
     nonce: Math.floor(Math.random()*1000000000),//1.000.000.000,
@@ -101,9 +99,13 @@ function RiseService(username,password){
     const data = {"type":"rise/data/FETCH_MANAGE_DATA","payload":"#1eb0ff"}
     const resp = call("POST",url,JSON.stringify(data))
     const courses = JSON.parse(resp.getContentText())
-    return courses
+    return courses.payload
   }
-
+  function getCourseInformation(courseId){
+    const url = 'https://rise.articulate.com/api/rise-runtime/ducks/rise/courses/GET_COURSE'
+    const data = {"type":"rise/courses/GET_COURSE","payload":{"courseId":courseId}}
+    return JSON.parse(call("POST",url,JSON.stringify(data)).getContentText()).payload
+  }
   function downloadXliff(courseId,courseName,language){
     const url = `https://rise.articulate.com/api/rise-runtime/export_course_translation/${courseId}`
     const resp = call("GET",url,{})
@@ -206,6 +208,7 @@ function RiseService(username,password){
   return{
     duplicateCourse,
     getCourses,
+    getCourseInformation,
     moveCourseToFolder,
     downloadXliff,
     deselectAuthor,
@@ -217,4 +220,3 @@ function RiseService(username,password){
     call,
   }
 }
-
