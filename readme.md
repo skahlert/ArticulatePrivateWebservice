@@ -12,6 +12,10 @@ These functions are supposed to be used with Google Script:
 5. Paste your bearer token at the beginning of the new script.
 
 # Supported Functions
+- Authenticaton (experimental)
+- List of all courses
+- List all folders
+- Download course content
 - Duplicate a course
 - Move course to a folder
 - Add collaborator
@@ -20,12 +24,20 @@ These functions are supposed to be used with Google Script:
 - Upload translated XLIFF to course
 
 # Possible, but not yet implemented
-- List of all courses
-- List all folders
 - Transfer course ownership
 - Change access rights for collaborators
-- Download course content
 - Edit course content
 - Delete course
 - Rename course
 - Export (PDF/Scorm/HTML)
+
+# Example
+```javascript
+function test(){
+  const myEmail = "john.doe@gmail.com"
+  const myPassword = "..."
+  const service = RiseService(myEmail,myPassword)
+  const courses = service.getCourses()
+  console.log(courses)
+}
+```
